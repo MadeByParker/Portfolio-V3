@@ -1,13 +1,152 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
+@import url('//db.onlinewebfonts.com/c/d28150f3f006f883721d91fa12d00267?family=FilmotypeLaSalle');
+@import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+    body {
+        @apply font-[Quicksand];
+    }
+    #Navbar {
+        @apply font-[Montserrat];
+    }
+    li {
+        @apply px-4;
+        @apply cursor-pointer;
+    }
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+
+@keyframes backgroundColorPalette {
+    0% {
+      background: #FF99C8;
+    }
+    25% {
+      background: #FCF6BD;
+    }
+    50% {
+      background: #D0F4DE;
+    }
+    75% {
+      background: #A9DEF9;
+    }
+    100% {
+      background: #E4C1F9;
+    }
+  }
+
+  @keyframes textColorPalette {
+    0% {
+      color: #FF70B3;
+    }
+    25% {
+      color: #F8E74F;
+    }
+    50% {
+      color: #6ADC96;
+    }
+    75% {
+      color: #66C5F4;
+    }
+    100% {
+      color: #C77DF2;
+    }
+  }
+
+  #titleName {
+    font-family: FilmotypeLaSalle;
+    font-weight: normal;
+    font-style: normal;
+    animation-name: textColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
 }
+
+#light #aboutComponent, #light #skillsComponent, #light #projectsComponent {
+    animation-name: hoverColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  #light body.text {
+    color: #694b63;
+  }
+
+  #dark #aboutComponent, #dark #skillsComponent, #dark #projectsComponent {
+    background: #181818;
+    color: white;
+  }
+
+  #skillsCards {
+    font-family: Figtree;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+  #projectsBtn {
+         /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, #181818 50%, #36d2f5 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+  }
+
+  #projectsBtn:hover {
+    background-position: left;
+}
+
+  @keyframes hoverColorPalette {
+    0% {
+      background: #FF70B3;
+    }
+    25% {
+      background: #F8E74F;
+    }
+    50% {
+      background: #6ADC96;
+    }
+    75% {
+      background: #66C5F4;
+    }
+    100% {
+      background: #C77DF2;
+    }
+  }
+
+  #light #skillsCard:hover {
+    animation-name: backgroundColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+  }
+
+  #dark #skillsCard {
+    color: #36d2f5;
+    border: 1px solid #36d2f5;
+    animation-name: none;
+  }
+  #dark #skillsCard:hover {
+    background-size: 200%;
+    background: #36d2f5;
+    color: #181818;
+    transition: .5s ease-out;
+  }
+
+  #nav-item:hover {
+    /*background: -webkit-linear-gradient(0deg,#5393f9, #f953f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+    transition: all 0.2s ease-in-out;
+    border-bottom-style: solid;
+    border-color: linear-gradient(0deg,#5393f9, #f953f3);;
+  }
+
+  #dark #title{
+    border-bottom: 4px solid #36d2f5;
+  }
+
