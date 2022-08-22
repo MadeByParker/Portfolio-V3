@@ -23,19 +23,19 @@
 
 @keyframes backgroundColorPalette {
     0% {
-      background: #FF99C8;
+      background: #90F1EF;
     }
     25% {
-      background: #FCF6BD;
+      background: #FFD6E0;
     }
     50% {
-      background: #D0F4DE;
+      background: #FFEF9F;
     }
     75% {
-      background: #A9DEF9;
+      background: #C1FBA4;
     }
     100% {
-      background: #E4C1F9;
+      background: #7BF1A8;
     }
   }
 
@@ -57,49 +57,6 @@
     }
   }
 
-  #titleName {
-    font-family: FilmotypeLaSalle;
-    font-weight: normal;
-    font-style: normal;
-    animation-name: textColorPalette;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-#light #aboutComponent, #light #skillsComponent, #light #projectsComponent {
-    animation-name: hoverColorPalette;
-    animation-duration: 20s;
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-  }
-
-  #light body.text {
-    color: #694b63;
-  }
-
-  #dark #aboutComponent, #dark #skillsComponent, #dark #projectsComponent {
-    background: #181818;
-    color: white;
-  }
-
-  #skillsCards {
-    font-family: Figtree;
-    font-weight: 700;
-    font-style: normal;
-  }
-
-  #projectsBtn {
-         /* "to left" / "to right" - affects initial color */
-    background: linear-gradient(to left, #181818 50%, #36d2f5 50%) right;
-    background-size: 200%;
-    transition: .5s ease-out;
-  }
-
-  #projectsBtn:hover {
-    background-position: left;
-}
-
   @keyframes hoverColorPalette {
     0% {
       background: #FF70B3;
@@ -118,12 +75,54 @@
     }
   }
 
-  #light #skillsCard:hover {
-    animation-name: backgroundColorPalette;
+  #dark #subtitle {
+    color: #8892B0;
+  }
+
+  
+
+  #titleName {
+    font-family: FilmotypeLaSalle;
+    font-weight: normal;
+    font-style: normal;
+    animation-name: textColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+#light #aboutComponent, #light #skillsComponent, #light #projectsComponent, #light #contactComponent {
+    animation-name: hoverColorPalette;
     animation-duration: 20s;
     animation-iteration-count: infinite;
     animation-direction: alternate;
   }
+
+
+  #dark #aboutComponent, #dark #skillsComponent, #dark #projectsComponent, #dark #contactComponent {
+    background: #121212;
+    color: white;
+  }
+
+  #skillsCards {
+    font-family: Figtree;
+    font-weight: 700;
+    font-style: normal;
+  }
+
+
+
+  #projectsBtn {
+         /* "to left" / "to right" - affects initial color */
+    background: linear-gradient(to left, #181818 50%, #36d2f5 50%) right;
+    background-size: 200%;
+    transition: .5s ease-out;
+  }
+
+  #projectsBtn:hover {
+    background-position: left;
+}
+
 
   #dark #skillsCard {
     color: #36d2f5;
@@ -137,16 +136,56 @@
     transition: .5s ease-out;
   }
 
-  #nav-item:hover {
+  #light #nav-item:hover {
     /*background: -webkit-linear-gradient(0deg,#5393f9, #f953f3);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;*/
+    animation-name: textColorPalette;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
     transition: all 0.2s ease-in-out;
     border-bottom-style: solid;
     border-color: linear-gradient(0deg,#5393f9, #f953f3);;
   }
 
-  #dark #title{
-    border-bottom: 4px solid #36d2f5;
+  #dark #nav-item:hover {
+    /*background: -webkit-linear-gradient(0deg,#5393f9, #f953f3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;*/
+    color: #36d2f5;
+    transition: all 0.2s ease-in-out;
+    border-bottom-style: solid;
+    border-color: linear-gradient(0deg,#5393f9, #f953f3);;
   }
 
+  #dark #projectCard {
+    --tw-shadow: 0 4px 6px -1px rgba(255, 255, 255, 0.8), 0 2px 4px -2px rgba(255, 255, 255, 0.8);
+    --tw-shadow-colored: 0 4px 6px -1px var(--tw-shadow-color), 0 2px 4px -2px var(--tw-shadow-color);
+    box-shadow: var(--tw-ring-offset-shadow, 0 0 rgba(255, 255, 255, 0.8)), var(--tw-ring-shadow, 0 0 rgba(255, 255, 255, 0.8)), var(--tw-shadow);
+
+  }
+
+  #dark #title{
+    border-bottom: 4px solid #36d2f5;
+    color: #CAD3F3;
+  }
+
+  .switch {
+    position: fixed;
+    background: #181818;
+  }
+  
+  
+  #light .switch label {
+    color: white;
+  }
+  
+  #dark .switch label {
+    color: white;
+  }
+
+  #dark #contactComponent textarea, #dark #contactComponent input {
+    background: #707070;
+    color: white;
+  }
