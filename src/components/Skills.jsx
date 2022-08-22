@@ -1,5 +1,3 @@
-import React from 'react';
-
 import HTML from '../assets/html.png';
 import CSS from '../assets/css.png';
 import JavaScript from '../assets/javascript.png';
@@ -10,58 +8,92 @@ import Materialize from '../assets/materialize.png';
 import GitHub from '../assets/github.png';
 import Tailwind from '../assets/tailwind.png';
 import SQL from '../assets/sql.png';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 const Skills = () => {
+    const techs = [
+        {
+          id: 1,
+          src: HTML,
+          title: "HTML",
+          style: "shadow-orange-500",
+          hoverEffect: "orange-500",
+        },
+        {
+          id: 2,
+          src: CSS,
+          title: "CSS",
+          style: "shadow-blue-500",
+          hoverEffect: "orange-500",
+        },
+        {
+          id: 3,
+          src: JavaScript,
+          title: "JavaScript",
+          style: "shadow-yellow-500",
+          hoverEffect: "yellow-500",
+        },
+        {
+          id: 4,
+          src: Reacting,
+          title: "React",
+          style: "shadow-sky-500",
+          hoverEffect: "sky-500",
+        },
+        {
+          id: 5,
+          src: Tailwind,
+          title: "Tailwind",
+          style: "shadow-sky-400",
+          hoverEffect: "sky-400",
+        },
+        {
+          id: 6,
+          src: GitHub,
+          title: "Github",
+          style: "shadow-gray-400",
+          hoverEffect: "gray-400",
+        },
+        {
+          id: 8,
+          src: Bootstrap,
+          title: "Bootstrap",
+          style: "shadow-purple-400",
+          hoverEffect: "purple-400",
+        },
+        {
+            id: 9,
+            src: Firebase,
+            title: "Google Firebase",
+            style: "shadow-yellow-500",
+            hoverEffect: "yellow-500",
+          },
+      ];
+
+      AOS.init({
+        offset: 200,
+        duration: 800,
+        easing: 'ease-in-out-sine',
+        delay: 200,
+        mirror: true
+      });
   return (
-    <div id="skillsComponent" name='skills' className='w-full h-screen text-[#694b63]'>
+    <div id="skillsComponent" name='skills' className='w-full h-screen z-0'>
       {/* Container */}
-      <div className='max-w-[1000px] mx-auto p-4 flex flex-col justify-center w-full h-full'>
-          <div>
-              <p id="title" className='text-4xl font-bold inline border-b-4 border-black'>Skills</p>
-              <p className='py-4 font-semibold text-lg sm:text-2xl'>These are the technologies I've worked with</p>
+      <div className='max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full '>
+          <div data-aos='fade-down'>
+              <p id="title" className='text-4xl font-bold border-b-4 p-2 inline border-black'>Skills</p>
+              <p id="subtitle" className='py-6 text-2xl font-semibold'>These are the technologies I've worked with</p>
           </div>
 
-          <div className='w-full grid grid-cols-2 sm:grid-cols-4 gap-4 text-center text-semibold py-8' id="skillsCards">
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={HTML} alt="HTML icon" />
-                  <p className='my-4'>HTML</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={CSS} alt="CSS icon" />
-                  <p className='my-4'>CSS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={JavaScript} alt="JavaScript icon" />
-                  <p className='my-4'>JavaScript</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={Reacting} alt="React icon" />
-                  <p className='my-4'>React</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={GitHub} alt="Github icon" />
-                  <p className='my-4'>Github</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={Firebase} alt="Firebase icon" />
-                  <p className='my-4'>Google Firebase</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={SQL} alt="SQL icon" />
-                  <p className='my-4'>SQL</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={Bootstrap} alt="Bootstrap icon" />
-                  <p className='my-4'>Bootstrap</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={Tailwind} alt="Tailwind CSS icon" />
-                  <p className='my-4'>Tailwind CSS</p>
-              </div>
-              <div className='shadow-md shadow-[#040c16] hover:scale-110  hover:shadow-[#694b63] duration-500' id="skillsCard">
-                  <img className='w-20 mx-auto' src={Materialize} alt="Materialize icon" />
-                  <p className='my-4'>Materialize CSS</p>
-              </div>
+          <div data-aos="fade-up" className='w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0' id="skillsCards">
+            {techs.map(({ id, src, title, style, hoverEffect }) => (
+                <div key={id} className={`shadow-md hover:scale-105 py-2 rounded-lg duration-500 ${style} bg-[${hoverEffect}]`} id="skillsCard">
+                    <img className='w-20 mx-auto' src={src} alt={title} />
+                    <p className='mt-4'>{title}</p>
+                </div>
+            ))}
           </div>
       </div>
     </div>

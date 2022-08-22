@@ -8,21 +8,17 @@ import {
   import { BsFillPersonLinesFill } from 'react-icons/bs';
 import Logo from '../assets/logo-script.png';
 import { Link } from 'react-scroll';
-import ReactSwitch from 'react-switch';
 
 export const ThemeContext = createContext(null);
 
-const Navbar = (toggleTheme, theme, setTheme) => {
+const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
     const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
 
-    toggleTheme = (currentTheme) => {
-      setTheme((currentTheme) => (currentTheme === "light" ? "dark" : "light"));
-    };
   
   return (
-    <div className='fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#181818] text-white' id="Navbar">
+    <div className='fixed w-full h-[90px] flex justify-between items-center px-4 bg-[#181818] z-50 text-white' id="Navbar">
         <div>
             <img src={Logo} alt="Logo" style={{width: '75px'}} />
         </div>
@@ -32,39 +28,43 @@ const Navbar = (toggleTheme, theme, setTheme) => {
         <ul className='hidden md:flex'>
             <li id='nav-item' >
             <Link to='home' smooth={true} duration={500}>
-              <span className='hover:border-b-2 hover:text-[#36d2f5] group-hover:scale-110 duration-200'>Home</span>         
+              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Home</span>         
             </Link>
             </li>
             <li id='nav-item' >
             <Link to='about' smooth={true} duration={500}>
-             <span className='hover:border-b-2 hover:text-[#36d2f5] group-hover:scale-110 duration-200'>About</span>           
+             <span className='hover:border-b-2 group-hover:scale-110 duration-200'>About</span>           
             </Link>
             </li>
             <li id='nav-item' >
             <Link to='skills' smooth={true} duration={500}>
-              <span className='hover:border-b-2 hover:text-[#36d2f5] group-hover:scale-110 duration-200'>Skills</span>
+              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Skills</span>
             </Link>
             </li>
             <li id='nav-item' >
             <Link to='work' smooth={true} duration={500}>
-              <span className='hover:border-b-2 hover:text-[#36d2f5] group-hover:scale-110 duration-200'>Projects</span>
+              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Projects</span>
             </Link>
             </li>
             <li id='nav-item' >
-              <span className='hover:border-b-2 hover:text-[#36d2f5] group-hover:scale-110 duration-200'>Contact</span>
+            <Link to='contact' smooth={true} duration={500}>
+              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Contact</span>
+            </Link>
             </li>
-            <li>
-            <ReactSwitch onChange={toggleTheme} checked={theme === "dark"}/>
+            <li id='nav-item' className='-m-2'>
+              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold'>
+                <span>Download CV</span>
+              </button>
             </li>
         </ul>
         </div>
 
-        {/* Hamburger */}
+        {/* Hamburger 
             <a className="md:hidden z-10 flex flex-col py-6 justify-center text-lg">
             <Link to='work' smooth={true} duration={500}>
               View my work
             </Link>
-            </a>
+  </a>*/}
         <button
       className="md:hidden z-10 flex flex-col h-12 w-12 justify-center items-center group"
       onClick={() => setNav(!nav)}
@@ -99,30 +99,44 @@ const Navbar = (toggleTheme, theme, setTheme) => {
             } transition-all delay-150 duration-300 overflow-hidden w-full`}
         >
             <img src={Logo} alt="Logo" style={{width: '100px'}} />
-            <li id='nav-item' className='hover:border-b-1 hover:text-[#36d2f5] group-hover:scale-110 duration-200 py-6 text-4xl' >
+            <li id='nav-item' className='hover:border-b-1 group-hover:scale-110 duration-200 py-6 text-4xl' >
             <Link onClick={handleClick} to='home' smooth={true} duration={500}>
               Home
             </Link>
             </li>
-            <li id='nav-item' className='hover:border-b-1 hover:text-[#36d2f5] group-hover:scale-110 duration-200 py-6 text-4xl' >
+            <li id='nav-item' className='hover:border-b-1 group-hover:scale-110 duration-200 py-6 text-4xl' >
             {' '}
           <Link onClick={handleClick} to='about' smooth={true} duration={500}>
             About
           </Link>
             </li>
-            <li id='nav-item' className='hover:border-b-1 hover:text-[#36d2f5] group-hover:scale-110 duration-200 py-6 text-4xl' >
+            <li id='nav-item' className='hover:border-b-1 group-hover:scale-110 duration-200 py-6 text-4xl' >
             {' '}
           <Link onClick={handleClick} to='skills' smooth={true} duration={500}>
             Skills
           </Link>
             </li>
-            <li id='nav-item' className='hover:border-b-1 hover:text-[#36d2f5] group-hover:scale-110 duration-200 py-6 text-4xl' >
+            <li id='nav-item' className='hover:border-b-1 group-hover:scale-110 duration-200 py-6 text-4xl' >
               {' '}
             <Link onClick={handleClick} to='work' smooth={true} duration={500}>
               Projects
             </Link>
             </li>
-            <li id='nav-item' className='hover:border-b-1 hover:text-[#36d2f5] group-hover:scale-110 duration-200 py-6 text-4xl' >Contact</li>
+            <li id='nav-item' >
+            <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
+              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Contact</span>
+            </Link>
+            </li>
+            <li id='nav-item' className='-m-2'>
+              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold'>
+                <a               
+                  href='/CV.pdf'
+                  rel="noreferrer"
+                  target='_blank'>
+                  <span>Download CV</span>
+                  </a>
+              </button>
+            </li>
         </ul>
 
       {/* Social icons */}
@@ -166,14 +180,6 @@ const Navbar = (toggleTheme, theme, setTheme) => {
               target='_blank'
             >
               Instagram <FaInstagram size={30} />
-            </a>
-          </li>
-          <li className='w-[180px] h-[60px] flex justify-between items-center ml-[-120px] hover:ml-[-10px] duration-300 bg-[#565f69]'>
-            <a
-              className='flex justify-between items-center w-full text-white'
-              href='/'
-            >
-              Resume <BsFillPersonLinesFill size={30} />
             </a>
           </li>
         </ul>
