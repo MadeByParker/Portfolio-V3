@@ -4,7 +4,7 @@
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600&display=swap');
-@import url('//db.onlinewebfonts.com/c/d28150f3f006f883721d91fa12d00267?family=FilmotypeLaSalle');
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700&display=swap');
 
 @layer base {
@@ -82,7 +82,7 @@
   
 
   #titleName {
-    font-family: FilmotypeLaSalle;
+    font-family: 'Indie Flower', cursive;
     font-weight: normal;
     font-style: normal;
     animation-name: textColorPalette;
@@ -91,7 +91,7 @@
     animation-direction: alternate;
 }
 
-#light #aboutComponent, #light #skillsComponent, #light #projectsComponent, #light #contactComponent {
+#light #aboutComponent, #light #skillsComponent, #light #projectsComponent, #light #contactComponent, #light #footer {
     animation-name: hoverColorPalette;
     animation-duration: 20s;
     animation-iteration-count: infinite;
@@ -99,7 +99,7 @@
   }
 
 
-  #dark #aboutComponent, #dark #skillsComponent, #dark #projectsComponent, #dark #contactComponent {
+  #dark #aboutComponent, #dark #skillsComponent, #dark #projectsComponent, #dark #contactComponent,   #dark #footer {
     background: #121212;
     color: white;
   }
@@ -177,15 +177,21 @@
   }
   
   
-  #light .switch label {
-    color: white;
-  }
-  
-  #dark .switch label {
+  #light .switch label,  #dark .switch label  {
     color: white;
   }
 
   #dark #contactComponent textarea, #dark #contactComponent input {
     background: #707070;
     color: white;
+  }
+
+   #footerContent {
+
+    @media (max-width: 768px) {
+      display: block;
+      width: 100%;
+      max-width: 270px;
+      margin: 0 auto 10px;
+    }
   }
