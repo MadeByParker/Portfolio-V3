@@ -1,12 +1,12 @@
 import React from 'react';
-import project1 from '../assets/project-1.gif';
-import project2 from '../assets/project-2.gif';
-import project3 from '../assets/project-3.gif';
-import project4 from '../assets/project-4.gif';
-import project5 from '../assets/project-5.png';
-import project6 from '../assets/project-6.png';
-import project7 from '../assets/project-7.png';
-import project8 from '../assets/project-8.png';
+import project1 from '../assets/projects/project-1.gif';
+import project2 from '../assets/projects/project-2.gif';
+import project3 from '../assets/projects/project-3.gif';
+import project4 from '../assets/projects/project-4.gif';
+import project5 from '../assets/projects/project-5.png';
+import project6 from '../assets/projects/project-6.png';
+import project7 from '../assets/projects/project-7.png';
+import project8 from '../assets/projects/project-8.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -26,7 +26,7 @@ const Projects = () => {
         subtitle: "ReactJS, Tailwind CSS, Firebase, Google Forms",
         description: "A revamped iteration cross-platform website of my portfolio website, built in 2021. Designed and develop with an analytical approach and thinking process to avoid using any frameworks that lack in depth such as Bootstrap.",
         image: project7,
-        link: "https://parker06.github.io/portfolio_react/",
+        link: "https://portfolio-9a196.firebaseapp.com",
         github: "https://github.com/Parker06/portfolio_react",
     },
     {
@@ -99,20 +99,19 @@ const Projects = () => {
                     className="rounded-md inset-0 duration-200 object-cover object-center hover:scale-110"
                   />
                   <div className="font-semibold font-mono flex items-center justify-center">
-                    <button 
+                    <a 
                       href={project.link}
                       target="_blank"
-                      rel="noreferrer"
+
                       className="w-1/2 px-6 py-3 m-4 rounded-md duration-500 hover:scale-110 hover:border-gray-600 hover:border-4">
                       Website
-                    </button>
-                    <button 
-                      href={project.project}
+                    </a>
+                    <a 
+                      href={project.github}
                       target="_blank"
-                      rel="noreferrer"
                       className="w-1/2 px-6 py-3 m-4 rounded-md duration-500 hover:scale-110 hover:border-gray-600 hover:border-4">
                       Code
-                    </button>
+                    </a>
                   </div>
                 </div>
 

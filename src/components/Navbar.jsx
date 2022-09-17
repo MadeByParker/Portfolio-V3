@@ -1,23 +1,30 @@
-import { createContext, useState } from 'react';
+import { useState } from 'react';
 import {
     FaGithub,
     FaLinkedin,
     FaInstagram,
   } from 'react-icons/fa';
   import { HiOutlineMail } from 'react-icons/hi';
-  import { BsFillPersonLinesFill } from 'react-icons/bs';
-import Logo from '../assets/logo-script.png';
+  import { BsFillPersonLinesFill, BsFillGearFill } from 'react-icons/bs';
+import Logo from '../assets/logos/logo-script.png';
 import { Link } from 'react-scroll';
+import { saveAs } from 'file-saver';
 
-export const ThemeContext = createContext(null);
+const saveFile = () => {
+  saveAs(
+    process.env.REACT_APP_CLIENT_URL + "/assets/CV.pdf",
+    "CV.pdf"
+  );
+}
 
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
     const genericHamburgerLine = `h-1 w-6 my-1 rounded-full bg-white transition ease transform duration-300`;
-
+    
   
   return (
+
     <div className='fixed w-full h-[90px] flex justify-between items-center px-4 bg-[#181818] z-50 text-white' id="Navbar">
         <div>
             <img src={Logo} alt="Logo" style={{width: '75px'}} />
@@ -52,7 +59,7 @@ const Navbar = () => {
             </Link>
             </li>
             <li id='nav-item' className='-m-2'>
-              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold'>
+              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold' onClick={saveFile}>
                 <span>Download CV</span>
               </button>
             </li>
@@ -122,19 +129,14 @@ const Navbar = () => {
               Projects
             </Link>
             </li>
-            <li id='nav-item' >
+            <li id='nav-item'  className='hover:border-b-1 group-hover:scale-110 duration-200 py-6 text-4xl' >
             <Link onClick={handleClick} to='contact' smooth={true} duration={500}>
-              <span className='hover:border-b-2 group-hover:scale-110 duration-200'>Contact</span>
+              Contact
             </Link>
             </li>
             <li id='nav-item' className='-m-2'>
-              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold'>
-                <a               
-                  href='/CV.pdf'
-                  rel="noreferrer"
-                  target='_blank'>
-                  <span>Download CV</span>
-                  </a>
+              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold' onClick={saveFile}>
+                Download CV
               </button>
             </li>
         </ul>

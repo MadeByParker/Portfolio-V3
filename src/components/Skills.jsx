@@ -1,13 +1,13 @@
-import HTML from '../assets/html.png';
-import CSS from '../assets/css.png';
-import JavaScript from '../assets/javascript.png';
-import Reacting from '../assets/react.png';
-import Bootstrap from '../assets/bootstrap.png';
-import Firebase from '../assets/firebase.png';
-import Materialize from '../assets/materialize.png';
-import GitHub from '../assets/github.png';
-import Tailwind from '../assets/tailwind.png';
-import SQL from '../assets/sql.png';
+import HTML from '../assets/logos/html.png';
+import CSS from '../assets/logos/css.png';
+import JavaScript from '../assets/logos/javascript.png';
+import Reacting from '../assets/logos/react.png';
+import Bootstrap from '../assets/logos/bootstrap.png';
+import Firebase from '../assets/logos/firebase.png';
+import Materialize from '../assets/logos/materialize.png';
+import GitHub from '../assets/logos/github.png';
+import Tailwind from '../assets/logos/tailwind.png';
+import SQL from '../assets/logos/sql.png';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
