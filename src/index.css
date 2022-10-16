@@ -21,6 +21,32 @@
 }
 
 
+
+*{
+  -ms-overflow-style: none;
+  }
+  ::-webkit-scrollbar {
+    width: 20px;
+    height: 20px;
+  }
+  
+ ::-webkit-scrollbar-track {
+    background: #484848;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #8892B0;
+    border-radius: 50vh;
+    border: 3px solid #8892B0;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #ffffff;
+    border-radius: 50vh;
+    border: 3px solid #ffffff;
+  }
+ 
+
 @keyframes backgroundColorPalette {
     0% {
       background: #90F1EF;
@@ -195,3 +221,41 @@
       margin: 0 auto 10px;
     }
   }
+  
+.loaderContainer {
+  position: absolute;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+}
+
+.fadeIn {
+  animation: fadeInAnimation 1s linear;
+}
+
+@keyframes fadeInAnimation {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.fadeOut {
+  animation: fadeOutAnimation 1s linear;
+}
+
+@keyframes fadeOutAnimation {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#root {
+  background-color: #121212;
+}
+
