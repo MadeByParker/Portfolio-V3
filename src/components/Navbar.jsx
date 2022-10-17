@@ -8,15 +8,21 @@ import {
   import { BsFillPersonLinesFill, BsFillGearFill } from 'react-icons/bs';
 import Logo from '../assets/logos/logo-script.png';
 import { Link } from 'react-scroll';
-import { saveAs } from 'file-saver';
 
 const saveFile = () => {
-  saveAs(
-    process.env.REACT_APP_CLIENT_URL + "/assets/CV.pdf",
-    "CV.pdf"
-  );
+  // using Java Script method to get PDF file
+  fetch('CV.pdf').then(response => {
+      response.blob().then(blob => {
+          // Creating new object of PDF file
+          const fileURL = window.URL.createObjectURL(blob);
+          // Setting various property values
+          let alink = document.createElement('a');
+          alink.href = fileURL;
+          alink.download = 'CV.pdf';
+          alink.click();
+      })
+  })
 }
-
 const Navbar = () => {
     const [nav, setNav] = useState(false);
     const handleClick = () => setNav(!nav);
