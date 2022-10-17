@@ -65,7 +65,7 @@ const Navbar = () => {
             </Link>
             </li>
             <li id='nav-item' className='-m-2'>
-              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold' onClick={saveFile}>
+              <button id="projectsBtn" className='font-mono text-[#36d2f5] group border-[#36d2f5] border-2 px-4 py-1 hover:scale-x-10 hover:bg-[#36d2f5] hover:border-[#36d2f5] hover:text-[#1d1d1d] skewX-19deg transition-all ease-in-out duration-300 hover:text-bold' href="https://github.com/Parker06/ParkerCodes-Portfolio/raw/master/public/CV.pdf">
                 <span>Download CV</span>
               </button>
             </li>
