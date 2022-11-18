@@ -22,7 +22,6 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 src/assets/files/writing.mov
-src/firebaseConfig.js
 
 # firebase and config files
 firebase.json
