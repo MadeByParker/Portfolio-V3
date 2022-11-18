@@ -56,19 +56,19 @@ const Skills = () => {
           hoverEffect: "gray-400",
         },
         {
-          id: 8,
+          id: 7,
           src: Bootstrap,
           title: "Bootstrap",
           style: "shadow-purple-400",
           hoverEffect: "purple-400",
         },
         {
-            id: 9,
-            src: Firebase,
-            title: "Google Firebase",
-            style: "shadow-yellow-500",
-            hoverEffect: "yellow-500",
-          },
+          id: 8,
+          src: Firebase,
+          title: "Google Firebase",
+          style: "shadow-yellow-500",
+          hoverEffect: "yellow-500",
+        },
       ];
 
       AOS.init({
