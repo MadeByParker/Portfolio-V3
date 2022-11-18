@@ -22,3 +22,10 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 src/assets/files/writing.mov
+
+# firebase and config files
+firebase.json
+postcss.config.js
+tailwind.config.js
+src/firebaseConfig.js
+.firebase
