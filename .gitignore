@@ -29,3 +29,4 @@ postcss.config.js
 tailwind.config.js
 src/firebaseConfig.js
 .firebaserc
+/.firebase
