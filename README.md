@@ -1,4 +1,4 @@
-# ✨ Hary Parker | Portfolio ✨
+# ✨ Harry Parker | Portfolio ✨
 
 #### 🔥 Try it online: [https://harryparker.co.uk](https://harryparker.co.uk)
 
